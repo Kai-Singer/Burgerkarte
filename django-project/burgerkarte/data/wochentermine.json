@@ -1,0 +1,627 @@
+{
+    "Montag": {
+        "datum": "2025-07-14",
+        "slots": [
+            {
+                "zeit": "09:00",
+                "blockiert_durch": "0003",
+                "anliegen": "TEST"
+            },
+            {
+                "zeit": "09:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "09:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "09:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "10:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "10:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "10:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "10:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "11:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "11:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "11:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "11:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "13:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "13:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "13:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "13:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "14:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "14:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "14:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "14:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "15:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "15:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "15:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "15:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            }
+        ]
+    },
+    "Dienstag": {
+        "datum": "2025-07-15",
+        "slots": [
+            {
+                "zeit": "09:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "09:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "09:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "09:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "10:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "10:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "10:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "10:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "11:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "11:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "11:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "11:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "13:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "13:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "13:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "13:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "14:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "14:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "14:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "14:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "15:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "15:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "15:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "15:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            }
+        ]
+    },
+    "Mittwoch": {
+        "datum": "2025-07-16",
+        "slots": [
+            {
+                "zeit": "09:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "09:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "09:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "09:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "10:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "10:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "10:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "10:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "11:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "11:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "11:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "11:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "13:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "13:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "13:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "13:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "14:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "14:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "14:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "14:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "15:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "15:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "15:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "15:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            }
+        ]
+    },
+    "Donnerstag": {
+        "datum": "2025-07-17",
+        "slots": [
+            {
+                "zeit": "09:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "09:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "09:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "09:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "10:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "10:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "10:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "10:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "11:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "11:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "11:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "11:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "13:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "13:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "13:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "13:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "14:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "14:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "14:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "14:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "15:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "15:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "15:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "15:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            }
+        ]
+    },
+    "Freitag": {
+        "datum": "2025-07-18",
+        "slots": [
+            {
+                "zeit": "09:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "09:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "09:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "09:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "10:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "10:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "10:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "10:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "11:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "11:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "11:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "11:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "13:00",
+                "blockiert_durch": "0008",
+                "anliegen": "Personalausweis"
+            },
+            {
+                "zeit": "13:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "13:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "13:45",
+                "blockiert_durch": "0006",
+                "anliegen": "Test"
+            },
+            {
+                "zeit": "14:00",
+                "blockiert_durch": "0014",
+                "anliegen": "Personalausweis "
+            },
+            {
+                "zeit": "14:15",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "14:30",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "14:45",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "15:00",
+                "blockiert_durch": null,
+                "anliegen": ""
+            },
+            {
+                "zeit": "15:15",
+                "blockiert_durch": "0020",
+                "anliegen": "Test"
+            },
+            {
+                "zeit": "15:30",
+                "blockiert_durch": "0016",
+                "anliegen": "Test"
+            },
+            {
+                "zeit": "15:45",
+                "blockiert_durch": "0017",
+                "anliegen": "TEST"
+            }
+        ]
+    }
+}

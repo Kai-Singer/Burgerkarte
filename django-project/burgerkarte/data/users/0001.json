@@ -1,0 +1,29 @@
+{
+    "id": "0001",
+    "vorname": "Armin",
+    "nachname": "Admin",
+    "geburtsdatum": "",
+    "adresse": {
+        "strasse": "",
+        "hausnummer": "",
+        "plz": "",
+        "ort": ""
+    },
+    "email": "admin@mail.de",
+    "passwort": "---",
+    "rolle": "admin",
+    "service": null,
+    "status": "aktiv",
+    "erstellungsdatum": "2025-07-03",
+    "name": "Armin Admin",
+    "bibliothek": {
+        "ausgeliehen": []
+    },
+    "tickets": [],
+    "bezahlkarte": {
+        "kontostand": 0.0,
+        "transaktionen": []
+    },
+    "termine": [],
+    "historie": []
+}

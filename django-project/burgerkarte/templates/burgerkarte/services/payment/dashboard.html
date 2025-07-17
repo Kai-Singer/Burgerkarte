@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../main_style.css">
+  <link rel="icon" type="image/png" href="../imgs/icons/hamburger.png">
+  <script src="../main_script.js" defer></script>
+  <title>Bezahlkarte - Dashboard</title>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar_hide_button">
+      <img src="../imgs/icons/close.png">
+    </div>
+    <h1>Burgerkarte</h1>
+    <h2>Service Interface<br>Bezahlkarte</h2>
+    <div class="navbar_container">
+      <div class="navbar_items">
+        <a class="navbar_item selected">
+          <img><p>Dashboard</p>
+        </a>
+        <a class="navbar_item" href="kontenverwaltung.html">
+          <img><p>Kontenverwaltung</p>
+        </a>
+        <a class="navbar_item" href="historie.html">
+          <img><p>Historie</p>
+        </a>
+      </div>
+    </div>
+    <div class="navbar_bottom_buttons">
+      <div>Hilfe</div>
+      <div>Kontakt</div>
+      <div>Impressum</div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="navbar_show_button">
+      <img src="../imgs/icons/hamburger.png">
+    </div>
+    <div class="topbar">
+      <h1>Bezahlkarte - Dashboard</h1>
+      <div class="usermenu_show_button">
+        <img src="../imgs/icons/user.png">
+        <p>Bezahl Admin</p>
+      </div>
+      <div class="usermenu">
+        <div class="usermenu_button">Profil</div>
+        <div class="usermenu_button">Abmelden</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="header">
+        <img src="../imgs/icons/world.png" alt="Dashboard">
+        <h1>Willkommen im Dashboard</h1>
+      </div>
+      <p>Von dieser Seite aus kann direkt auf die verknüpften Seiten gesprungen werden, die die nötigen Funktionen enthalten um den Betrieb der Bezahlkarte steuern zu können. Auch wichtige Kennzahlen können direkt hier eingesehen werden.</p>
+    </div>
+    <div class="actions">
+      <a class="action_item" href="kontenverwaltung.html">
+        <img src="../imgs/icons/money_cards.png" alt="Kontenverwaltung">
+        <p>Kontenverwaltung</p>
+      </a>
+      <a class="action_item" href="historie.html">
+        <img src="../imgs/icons/history.png" alt="Historie">
+        <p>Historie</p>
+    </a>
+    <div class="dashboard">
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Anzahl Benutzer mit aktivierter Bezahlfunktion</h1>
+        </div>
+        <p><span class="bold">5</span> Benutzer</p>
+      </div>
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Gesamter Kontostand</h1>
+        </div>
+        <p><span class="success bold">73,15€</span></p>
+      </div>
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Gesamter Umsatz</h1>
+        </div>
+        <p><span class="success bold">866,40€</span></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

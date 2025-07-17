@@ -1,0 +1,36 @@
+[
+    {
+        "isbn": "978-3-15-000001-4",
+        "titel": "Faust - Der Tragödie Erster Teil",
+        "autor": "Johann Wolfgang von Goethe",
+        "genre": [
+            "Drama",
+            "Tragödie"
+        ],
+        "verfuegbar": true,
+        "details": ""
+    },
+    {
+        "isbn": "978-3-15-009900-1",
+        "titel": "Die Verwandlung",
+        "autor": "Franz Kafka",
+        "genre": [
+            "Epik",
+            "Novelle",
+            "Kurzroman"
+        ],
+        "verfuegbar": true,
+        "details": ""
+    },
+    {
+        "isbn": "978-3-15-019018-0",
+        "titel": "Woyzeck",
+        "autor": "Georg Büchner",
+        "genre": [
+            "Drama",
+            "Tragödie"
+        ],
+        "verfuegbar": true,
+        "details": ""
+    }
+]

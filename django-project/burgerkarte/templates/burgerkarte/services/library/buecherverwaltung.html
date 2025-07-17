@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../main_style.css">
+  <link rel="icon" type="image/png" href="../imgs/icons/hamburger.png">
+  <script src="../main_script.js" defer></script>
+  <title>Bibliothek - Bücherverwaltung</title>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar_hide_button">
+      <img src="../imgs/icons/close.png">
+    </div>
+    <h1>Burgerkarte</h1>
+    <h2>Service Interface<br>Bibliothek</h2>
+    <div class="navbar_container">
+      <div class="navbar_items">
+        <a class="navbar_item" href="dashboard.html">
+          <img><p>Dashboard</p>
+        </a>
+        <a class="navbar_item selected">
+          <img><p>Bücherverwaltung</p>
+        </a>
+        <a class="navbar_item" href="nutzerverwaltung.html">
+          <img><p>Nutzerverwaltung</p>
+        </a>
+        <a class="navbar_item" href="historie.html">
+          <img><p>Historie</p>
+        </a>
+      </div>
+    </div>
+    <div class="navbar_bottom_buttons">
+      <div>Hilfe</div>
+      <div>Kontakt</div>
+      <div>Impressum</div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="navbar_show_button">
+      <img src="../imgs/icons/hamburger.png">
+    </div>
+    <div class="topbar">
+      <h1>Bibliothek - Bücherverwaltung</h1>
+      <div class="usermenu_show_button">
+        <img src="../imgs/icons/user.png">
+        <p>Bibliothek Admin</p>
+      </div>
+      <div class="usermenu">
+        <div class="usermenu_button">Profil</div>
+        <div class="usermenu_button">Abmelden</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="header">
+        <img src="../imgs/icons/books.png" alt="Bücherverwaltung">
+        <h1>Willkommen bei der Bücherverwaltung</h1>
+      </div>
+      <p>Von dieser Seite aus können alle Bücher im Bestand der Bibliothek bearbeitet oder aus dem System gelöscht werden. Es können von hier aus auch neue Bücher der Bibliothek im System hinzugefügt werden.</p>
+    </div>
+    <div class="dashboard">
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Anzahl aller Bücher</h1>
+        </div>
+        <p><span class="bold">5</span> Bücher</p>
+      </div>
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Anzahl der vertretenen Autoren</h1>
+        </div>
+        <p><span class="bold">5</span> Autoren</p>
+      </div>
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Anzahl der vertretenen Genre</h1>
+        </div>
+        <p><span class="bold">3</span> Genre</p>
+      </div>
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Genre mit den meisten Büchern</h1>
+        </div>
+        <p><span class="bold">Fantasy</span></p>
+      </div>
+    </div>
+    <div class="actions">
+      <div class="action_item">
+        <img src="../imgs/icons/add_book.png" alt="Buch hinzufügen">
+        <p>Buch hinzufügen</p>
+      </div>
+      <div class="action_item">
+        <img src="../imgs/icons/download.png" alt="Liste herunterladen">
+        <p>Liste herunterladen</p>
+      </div>
+      <div class="action_item">
+        <img src="../imgs/icons/upload.png" alt="Liste hochladen">
+        <p>Liste hochladen</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="header">
+        <h1>Liste aller Bücher</h1>
+      </div>
+      <div class="table_filter">
+        <div class="table_group">
+          <label for="search">Kennwortsuche</label>
+          <input type="text" placeholder="Suche..." id="search" name="search">
+        </div>
+        <div class="table_group">
+          <label for="author">Autor</label>
+          <select name="author" id="author">
+            <option value="all">Alle</option>
+            <option value="1">George Orwell</option>
+            <option value="2">J.K. Rowling</option>
+            <option value="3">Franz Kafka</option>
+            <option value="2">J.R.R. Tolkien</option>
+            <option value="3">Michael Ende</option>
+          </select>
+        </div>
+        <div class="table_group">
+          <label for="genre">Genre</label>
+          <select name="genre" id="genre">
+            <option value="all">Alle</option>
+            <option value="1">Dystopie</option>
+            <option value="2">Fantasy</option>
+            <option value="3">Novelle</option>
+          </select>
+        </div>
+        <div class="table_group">
+          <label for="genre">Status</label>
+          <select name="genre" id="genre">
+            <option value="all">Alle</option>
+            <option value="1">Verfügbar</option>
+            <option value="2">Entliehen</option>
+            <option value="3">Verschwunden</option>
+          </select>
+        </div>
+        <button type="reset">Zurücksetzen</button>
+        <button type="submit">
+          <img src="../imgs/icons/search.png">
+        </button>
+      </div>
+      <div class="table_container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Titel</th>
+              <th>Autor</th>
+              <th>Genre</th>
+              <th>Erschienen</th>
+              <th>Status</th>
+              <th>Aktionen</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0001</td>
+              <td>1984</td>
+              <td>George Orwell</td>
+              <td>Dystopie</td>
+              <td>1949</td>
+              <td><span class="bold warning">Entliehen</span> - 15.04.2024</td>
+              <td>
+                <div class="table_buttons">
+                  <div class="button">Bearbeiten</div>
+                  <div class="button danger">Löschen</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>0002</td>
+              <td>Harry Potter und der Stein der Weisen</td>
+              <td>J.K. Rowling</td>
+              <td>Fantasy</td>
+              <td>1997</td>
+              <td><span class="bold danger">Entliehen</span> - 09.04.2024</td>
+              <td>
+                <div class="table_buttons">
+                  <div class="button">Bearbeiten</div>
+                  <div class="button danger">Löschen</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>0003</td>
+              <td>Die Verwandlung</td>
+              <td>Franz Kafka</td>
+              <td>Novelle</td>
+              <td>1915</td>
+              <td><span class="bold warning">Entliehen</span> - 21.04.2024</td>
+              <td>
+                <div class="table_buttons">
+                  <div class="button">Bearbeiten</div>
+                  <div class="button danger">Löschen</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>0004</td>
+              <td>Der Herr der Ringe: Die Gefährten</td>
+              <td>J.R.R. Tolkien</td>
+              <td>Fantasy</td>
+              <td>1954</td>
+              <td><span class="success bold">Verfügbar</span></td>
+              <td>
+                <div class="table_buttons">
+                  <div class="button">Bearbeiten</div>
+                  <div class="button danger">Löschen</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>0005</td>
+              <td>Die unendliche Geschichte</td>
+              <td>Michael Ende</td>
+              <td>Fantasy</td>
+              <td>1979</td>
+              <td><span class="danger bold">Verschwunden</span></td>
+              <td>
+                <div class="table_buttons">
+                  <div class="button">Bearbeiten</div>
+                  <div class="button danger">Löschen</div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

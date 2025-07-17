@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{% static 'css/main_style.css' %}?v=2" />
+  <link rel="icon" type="image/png" href="{% static 'imgs/menu_icons/hamburger_11.png' %}">
+  <script>
+    const staticHamburgerPrefix = "{% static 'imgs/menu_icons/' %}";
+  </script>
+  <script src="{% static 'js/main_script.js' %}?v=2" defer></script>
+  <title>Historie - Burgerkarte</title>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar_hide_button">
+      <img src="{% static 'imgs/close.png' %}">
+    </div>
+    <h1>Burgerkarte</h1>
+    <h2>User Interface</h2>
+    <div class="navbar_container">
+      <div class="navbar_items">
+        <a class="navbar_item" href="/user_dashboard">
+          <img><p>Dashboard</p>
+        </a>
+        <a class="navbar_item" href="/bibliothek">
+          <img><p>Bibliothek</p>
+        </a>
+        <a class="navbar_item" href="/tickets">
+          <img><p>Tickets</p>
+        </a>
+        <a class="navbar_item" href="/bezahlkarte">
+          <img><p>Bezahlkarte</p>
+        </a>
+        <a class="navbar_item" href="/termine">
+          <img><p>Termine</p>
+        </a>
+        <a class="navbar_item selected" href="/historie">
+          <img><p>Historie</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="navbar_show_button">
+      <img src="{% static 'imgs/menu_icons/hamburger_11.png' %}" />
+    </div>
+    <div class="topbar">
+      <h1>Historie</h1>
+      <div class="usermenu_show_button">
+        <img src="{% static 'imgs/user.png' %}" />
+        <p>{{ request.session.user_name }}</p>
+      </div>
+      <div class="usermenu">
+        <a href="{% url 'logout' %}" class="usermenu_button">Abmelden</a>
+      </div>
+    </div>
+
+    {% if messages %}
+      <div class="message_container">
+        {% for message in messages %}
+            {% if message.tags == 'error' %}
+              <div class="message danger hidden">
+                <img src="{% static 'imgs/error.png' %}" alt="Error">
+                <p>{{ message }}</p>
+              </div>
+            {% elif message.tags == 'success' %}
+              <div class="message success hidden">
+                <img src="{% static 'imgs/success.png' %}" alt="Success">
+                <p>{{ message }}</p>
+              </div>
+            {% elif message.tags == 'warning' %}
+              <div class="message warning hidden">
+                <img src="{% static 'imgs/warning.png' %}" alt="Warning">
+                <p>{{ message }}</p>
+              </div>
+            {% elif message.tags == 'info' %}
+              <div class="message info hidden">
+                <img src="{% static 'imgs/info.png' %}" alt="Info">
+                <p>{{ message }}</p>
+              </div>
+            {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="card">
+      <div class="header">
+        <img src="{% static 'imgs/history.png' %}">
+        <h1>Deine Historie</h1>
+      </div>
+      <p>Was war wann nochmal? In deiner Historie findest du alle Aktionen rund um deine Bürgerkarte - von gebuchten Terminen bis zu bezahlten Tickets. Alles sauber protokolliert, damit du immer den Überblick behältst. Hier steht's schwarz auf weiß. Deine Historie merkt sich alles, was du schon wieder vergessen hast.</p>
+    </div>
+
+    <div class="card" id="aktivitaetenverlauf">
+      <div class="header">
+        <img src="{% static 'imgs/search_document.png' %}" />
+        <h1>Aktivitätenverlauf</h1>
+      </div>
+      <form method="get" class="table_filter" action="/historie#aktivitaetenverlauf">
+        <div class="table_group">
+          <label for="historySearch">Kennwortsuche</label>
+          <input type="text" id="search" name="search" placeholder="Datum oder Aktion..." value="{{ search_term }}"/>
+        </div>
+        <button type="button" class="button danger" onclick="resetSearch()">Zurücksetzen</button>
+        <button type="submit">
+          <img src="{% static 'imgs/search.png' %}" alt="Suchen"/>
+        </button>
+      </form>
+      <div class="table_container">
+        {% if aktivitaeten|length != 0 %}
+          <table>
+            <thead>
+              <tr>
+                <th>Datum</th>
+                <th>Zeitpunkt</th>
+                <th>Beschreibung</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for aktivitaet in aktivitaeten %}
+                <tr>
+                  <td>{{ aktivitaet.datum }}</td>
+                  <td>{{ aktivitaet.zeit }}</td>
+                  <td>{{ aktivitaet.beschreibung }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {% else %}
+            <p class="no_event">Keine Aktivitäten gefunden.</p>
+          {% endif %}
+      </div>
+    </div>
+  </div>
+  <script>
+    function resetSearch() {
+      document.getElementById('search').value = '';
+    }
+  </script>
+</body>
+</html>

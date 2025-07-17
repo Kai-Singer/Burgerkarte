@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../main_style.css">
+  <link rel="icon" type="image/png" href="../imgs/icons/hamburger.png">
+  <script src="../main_script.js" defer></script>
+  <title>ÖPNV - Dashboard</title>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar_hide_button">
+      <img src="../imgs/icons/close.png">
+    </div>
+    <h1>Burgerkarte</h1>
+    <h2>Service Interface<br>ÖPNV</h2>
+    <div class="navbar_container">
+      <div class="navbar_items">
+        <a class="navbar_item selected">
+          <img><p>Dashboard</p>
+        </a>
+        <a class="navbar_item" href="ticketverwaltung.html">
+          <img><p>Ticketverwaltung</p>
+        </a>
+        <a class="navbar_item" href="nutzerverwaltung.html">
+          <img><p>Nutzerverwaltung</p>
+        </a>
+        <a class="navbar_item" href="historie.html">
+          <img><p>Historie</p>
+        </a>
+      </div>
+    </div>
+    <div class="navbar_bottom_buttons">
+      <div>Hilfe</div>
+      <div>Kontakt</div>
+      <div>Impressum</div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="navbar_show_button">
+      <img src="../imgs/icons/hamburger.png">
+    </div>
+    <div class="topbar">
+      <h1>ÖPNV - Dashboard</h1>
+      <div class="usermenu_show_button">
+        <img src="../imgs/icons/user.png">
+        <p>ÖPNV Admin</p>
+      </div>
+      <div class="usermenu">
+        <div class="usermenu_button">Profil</div>
+        <div class="usermenu_button">Abmelden</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="header">
+        <img src="../imgs/icons/world.png" alt="Dashboard">
+        <h1>Willkommen im Dashboard</h1>
+      </div>
+      <p>Von dieser Seite aus kann direkt auf die verknüpften Seiten gesprungen werden, die die nötigen Funktionen enthalten um den Betrieb des ÖPNV-Ticketsystems steuern zu können. Auch wichtige Kennzahlen können direkt hier eingesehen werden.</p>
+    </div>
+    <div class="actions">
+      <a class="action_item" href="ticketverwaltung.html">
+        <img src="../imgs/icons/ticket.png" alt="Ticketverwaltung">
+        <p>Ticketverwaltung</p>
+      </a>
+      <a class="action_item" href="nutzerverwaltung.html">
+        <img src="../imgs/icons/users.png" alt="Nutzerverwaltung">
+        <p>Nutzerverwaltung</p>
+      </a>
+      <a class="action_item" href="historie.html">
+        <img src="../imgs/icons/history.png" alt="Historie">
+        <p>Historie</p>
+    </a>
+    <div class="dashboard">
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Anzahl verschiedener Tickets</h1>
+        </div>
+        <p><span class="bold">8</span> Tickets</p>
+      </div>
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Durchschnittlicher Ticketpreis</h1>
+        </div>
+        <p><span class="bold">9,30€</span></p>
+      </div>
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Beliebtestes Ticket</h1>
+        </div>
+        <p><span class="bold">Standard Erwachsene</span></p>
+      </div>
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Anzahl verkaufter Tickets</h1>
+        </div>
+        <p><span class="bold">105</span> Tickets</p>
+      </div>
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Aktuell laufende Tickets</h1>
+        </div>
+        <p><span class="bold">8</span> Tickets</p>
+      </div>
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Gesamtumsatz</h1>
+        </div>
+        <p><span class="success bold">520,00€</span></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+{
+    "id": "0003",
+    "vorname": "Louis",
+    "nachname": "der Copter",
+    "geburtsdatum": "",
+    "adresse": {
+        "strasse": "",
+        "hausnummer": "",
+        "plz": "",
+        "ort": ""
+    },
+    "email": "louis@mail.de",
+    "passwort": "---",
+    "rolle": "user",
+    "service": null,
+    "status": "aktiv",
+    "erstellungsdatum": "2025-07-03",
+    "name": "Louis der Copter",
+    "bibliothek": {
+        "ausgeliehen": []
+    },
+    "tickets": [
+        {
+            "ticketnummer": "T1751625866",
+            "typ": "Einzelfahrt",
+            "start": "Stuttgart",
+            "ziel": "Ludwigsburg",
+            "gültigkeit": "2025-07-04",
+            "preis": 3.2,
+            "status": "abgelaufen"
+        },
+        {
+            "ticketnummer": "T1751797065",
+            "typ": "Tageskarte",
+            "start": null,
+            "ziel": null,
+            "gültigkeit": "2025-07-06",
+            "preis": 6.0,
+            "status": "aktiv"
+        }
+    ],
+    "bezahlkarte": {
+        "kontostand": 74.8,
+        "transaktionen": [
+            {
+                "datum": "04.07.2025",
+                "betrag": 100.0,
+                "typ": "einzahlung",
+                "beschreibung": "Aufladung"
+            },
+            {
+                "datum": "04.07.2025",
+                "betrag": 6.0,
+                "typ": "ausgabe",
+                "beschreibung": "Tageskarte gekauft"
+            },
+            {
+                "datum": "04.07.2025",
+                "betrag": 3.2,
+                "typ": "ausgabe",
+                "beschreibung": "Einzelfahrt gekauft"
+            },
+            {
+                "datum": "2025-07-04",
+                "betrag": 10.0,
+                "typ": "ausgabe",
+                "beschreibung": "Auszahlung am Burgerkarte Bankomaten"
+            },
+            {
+                "datum": "06.07.2025",
+                "betrag": 6.0,
+                "typ": "ausgabe",
+                "beschreibung": "Tageskarte gekauft"
+            }
+        ]
+    },
+    "termine": [
+        {
+            "datum": "2025-06-30",
+            "zeit": "09:00",
+            "wochentag": "Montag",
+            "anliegen": "TEST"
+        }
+    ],
+    "historie": [
+        {
+            "typ": "termin_buchung",
+            "zeitpunkt": "2025-07-03T21:06:45.130452+00:00",
+            "beschreibung": "Termin am 2025-07-02 um 09:15 gebucht"
+        },
+        {
+            "typ": "termin_absage",
+            "zeitpunkt": "2025-07-03T21:18:56.451513+00:00",
+            "beschreibung": "Termin am 2025-07-02 um 09:15 abgesagt"
+        },
+        {
+            "typ": "termin_buchung",
+            "zeitpunkt": "2025-07-03T21:24:59.705679+00:00",
+            "beschreibung": "Termin am 2025-07-02 um 09:15 gebucht"
+        },
+        {
+            "typ": "termin_absage",
+            "zeitpunkt": "2025-07-03T21:25:14.939148+00:00",
+            "beschreibung": "Termin am 2025-07-02 um 09:15 abgesagt"
+        },
+        {
+            "typ": "termin_buchung",
+            "zeitpunkt": "2025-07-04T09:37:52.504842+00:00",
+            "beschreibung": "Termin am 2025-07-03 um 09:00 gebucht"
+        },
+        {
+            "typ": "termin_absage",
+            "zeitpunkt": "2025-07-04T09:37:55.549697+00:00",
+            "beschreibung": "Termin am 2025-07-03 um 09:00 abgesagt"
+        },
+        {
+            "typ": "ticket_kauf",
+            "zeitpunkt": "2025-07-04T10:04:08.688931+00:00",
+            "beschreibung": "Tageskarte gekauft für 6.00€"
+        },
+        {
+            "typ": "ticket_loeschen",
+            "zeitpunkt": "2025-07-04T10:44:02.883219+00:00",
+            "beschreibung": "Tageskarte Ticket gelöscht"
+        },
+        {
+            "typ": "ticket_kauf",
+            "zeitpunkt": "2025-07-04T10:44:26.594722+00:00",
+            "beschreibung": "Einzelfahrt gekauft für 3.20€"
+        },
+        {
+            "typ": "ticket_kauf",
+            "zeitpunkt": "2025-07-06T10:17:45.229837+00:00",
+            "beschreibung": "Tageskarte gekauft für 6.00€"
+        },
+        {
+            "typ": "termin_buchung",
+            "zeitpunkt": "2025-07-06T10:18:50.461008+00:00",
+            "beschreibung": "Termin am 2025-06-30 um 09:00 gebucht"
+        }
+    ]
+}

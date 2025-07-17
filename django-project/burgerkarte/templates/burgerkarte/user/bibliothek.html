@@ -1,0 +1,310 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{% static 'css/main_style.css' %}?v=2" />
+  <link rel="icon" type="image/png" href="{% static 'imgs/menu_icons/hamburger_11.png' %}">
+  <script>
+    const staticHamburgerPrefix = "{% static 'imgs/menu_icons/' %}";
+  </script>
+  <script src="{% static 'js/main_script.js' %}?v=2" defer></script>
+  <title>Bibliothek - Burgerkarte</title>
+</head>
+<body>
+<div class="navbar">
+    <div class="navbar_hide_button">
+      <img src="{% static 'imgs/close.png' %}">
+    </div>
+    <h1>Burgerkarte</h1>
+    <h2>User Interface</h2>
+    <div class="navbar_container">
+      <div class="navbar_items">
+        <a class="navbar_item" href="/user_dashboard">
+          <img><p>Dashboard</p>
+        </a>
+        <a class="navbar_item selected" href="/bibliothek">
+          <img><p>Bibliothek</p>
+        </a>
+        <a class="navbar_item" href="/tickets">
+          <img><p>Tickets</p>
+        </a>
+        <a class="navbar_item" href="/bezahlkarte">
+          <img><p>Bezahlkarte</p>
+        </a>
+        <a class="navbar_item" href="/termine">
+          <img><p>Termine</p>
+        </a>
+        <a class="navbar_item" href="/historie">
+          <img><p>Historie</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="navbar_show_button">
+      <img src="{% static 'imgs/menu_icons/hamburger_11.png' %}" />
+    </div>
+    <div class="topbar">
+      <h1>Bibliothek</h1>
+      <div class="usermenu_show_button">
+        <img src="{% static 'imgs/user.png' %}" />
+        <p>{{ request.session.user_name }}</p>
+      </div>
+      <div class="usermenu">
+        <a href="{% url 'logout' %}" class="usermenu_button">Abmelden</a>
+      </div>
+    </div>
+
+    {% if messages %}
+      <div class="message_container">
+        {% for message in messages %}
+            {% if message.tags == 'error' %}
+              <div class="message danger hidden">
+                <img src="{% static 'imgs/error.png' %}" alt="Error">
+                <p>{{ message }}</p>
+              </div>
+            {% elif message.tags == 'success' %}
+              <div class="message success hidden">
+                <img src="{% static 'imgs/success.png' %}" alt="Success">
+                <p>{{ message }}</p>
+              </div>
+            {% elif message.tags == 'warning' %}
+              <div class="message warning hidden">
+                <img src="{% static 'imgs/warning.png' %}" alt="Warning">
+                <p>{{ message }}</p>
+              </div>
+            {% elif message.tags == 'info' %}
+              <div class="message info hidden">
+                <img src="{% static 'imgs/info.png' %}" alt="Info">
+                <p>{{ message }}</p>
+              </div>
+            {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="card">
+      <div class="header">
+        <img src="{% static 'imgs/books.png' %}"/>
+        <h1>Dein Bibliotheksausweis</h1>
+      </div>
+      <p>Willkommen in der digitalen Bibliothek! Hier siehst du, welche Bücher du ausgeliehen hast, ob Gebühren offen sind und wie lange du noch Zeit hast. Deine Bürgerkarte ist auch dein Bibliotheksausweis - scannen, lesen, fertig!</p>
+    </div>
+
+    <div class="dashboard">
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Ausgeliehene Bücher</h1>
+        </div>
+        <p><span class="bold">{{ anzahl_buecher }}</span> {% if anzahl_buecher == 1 %}Buch{% else %}Bücher{% endif %}</p>
+      </div>
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Offene Mahngebühren</h1>
+        </div>
+        <p><span class="bold {{ gebuehren_status }}">{{ gebuehren }}</span></p>
+      </div>
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Verfügbare Bücher</h1>
+        </div>
+        <p><span class="bold">{{ buecher_verfuegbar }}</span> {% if buecher_verfuegbar == 1 %}Buch{% else %}Bücher{% endif %}</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a class="action_item" href="#ausgelieheneBuecher">
+        <img src="{% static 'imgs/book_open.png' %}" alt="Deine Bücher">
+        <p>Deine Bücher</p>
+      </a>
+      <a class="action_item" href="#mahngebuehren">
+        <img src="{% static 'imgs/money.png' %}" alt="Mahngebühren">
+        <p>Mahngebühren</p>
+      </a>
+      <a class="action_item" href="#buecherkatalog">
+        <img src="{% static 'imgs/search_document.png' %}" alt="Bücherkatalog">
+        <p>Bücherkatalog</p>
+      </a>
+    </div>
+    
+    <div class="card" id="ausgelieheneBuecher">
+      <div class="header">
+        <img src="{% static 'imgs/book_open.png' %}"/>
+        <h1>Ausgeliehene Bücher</h1>
+      </div>
+      <form method="get" class="table_filter" action="/bibliothek#ausgelieheneBuecher">
+        <div class="table_group">
+          <label for="ausgeliehenSearch">Kennwortsuche</label>
+          <input type="text" placeholder="Titel oder Autor..." id="ausgeliehenSearch" name="ausgeliehenSearch" value="{{ ausgeliehen_search }}">
+        </div>
+        <button type="button" class="button danger" onclick="resetSearchAusgeliehen()">Zurücksetzen</button>
+        <button type="submit">
+          <img src="{% static 'imgs/search.png' %}">
+        </button>
+      </form>
+      {% if ausgeliehen %}
+        <div class="table_container">
+          <table>
+            <thead>
+              <tr>
+                <th>Titel</th>
+                <th>Autoren</th>
+                <th>Ausleihdatum</th>
+                <th>Rückgabedatum</th>
+                <th>Aktionen</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for buch in ausgeliehen %}
+                <tr>
+                  <td>{{ buch.titel }}</td>
+                  <td>{{ buch.autor }}</td>
+                  <td>{{ buch.beantragt_am }}</td>
+                  <td>
+                    {% if buch.rueckgabe_bis %}
+                      {{ buch.rueckgabe_bis }}
+                    {% else %}
+                      -
+                    {% endif %}
+                  </td>
+                  <td>
+                    <div class="table_buttons">
+                      <form method="post" action="{% url 'buch_verlaengern' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="isbn" value="{{ buch.isbn }}">
+                        {% if buch.bereits_verlaengert %}
+                          <button class="button disabled" disabled>Bereits verlängert</button>
+                        {% else %}
+                          <button class="button">Verlängern</button>
+                        {% endif %}
+                      </form>
+                    </div>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      {% else %}
+        <p>Keine ausgeliehenen Bücher gefunden.</p>
+      {% endif %}
+    </div>
+
+    <div class="card" id="mahngebuehren">
+      <div class="header">
+        <img src="{% static 'imgs/money.png' %}"/>
+        <h1>Mahngebühren</h1>
+      </div>
+      <p>Hier siehst du deine Mahngebühren. Bitte begleiche offene Mahngebühren so bald wie möglich.</p>
+      <p>Offene Gebühren: <span class="bold {{ gebuehren_status }}">{{ gebuehren }}</span></p>
+      {% if gebuehren_status == "danger" %}
+      <form method="post" action="{% url 'gebuehren_begleichen' %}">
+        {% csrf_token %}
+        <div class="button_container">
+          <button class="button danger">
+            <p>Jetzt kostenpflichtig bezahlen</p>
+          </button>
+        </div>
+      </form>
+      {% endif %}
+    </div>
+
+    <div class="card" id="buecherkatalog">
+      <div class="header">
+        <img src="{% static 'imgs/search_document.png' %}"/>
+        <h1>Bücherkatalog</h1>
+      </div>
+      <form method="get" class="table_filter" action="/bibliothek#ausgelieheneBuecher">
+        <div class="table_group">
+          <label for="bookSearch">Kennwortsuche</label>
+          <input type="text" name="search" id="bookSearch" placeholder="Titel oder Autor..." value="{{ search_term }}">
+        </div>
+        <div class="table_group">
+          <label for="genreFilter">Genre</label>
+          <select name="genre" id="genreFilter">
+            <option value="all" {% if selected_genre == "all" %}selected{% endif %}>Alle</option>
+            {% for genre in genres %}
+              <option value="{{ genre }}" {% if selected_genre == genre %}selected{% endif %}>{{ genre|title }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <button type="button" class="button danger" onclick="resetSearchKatalog()">Zurücksetzen</button>
+        <button type="submit">
+          <img src="{% static 'imgs/search.png' %}">
+        </button>
+      </form>
+      <div class="table_container">
+        <table>
+          <thead>
+            <tr>
+              <th>Titel</th>
+              <th>Autoren</th>
+              <th>Genre</th>
+              <th>Verfügbarkeit</th>
+              <!-- <th>Aktion</th> -->
+            </tr>
+          </thead>
+          <tbody>
+            {% for buch in buecher %}
+              <tr>
+                <td>{{ buch.titel }}</td>
+                <td>{{ buch.autor }}</td>
+                <td>{{ buch.genre|join:", " }}</td>
+                <td>
+                  {% if buch.verfuegbar %}
+                    <span class="success bold">Verfügbar</span>
+                  {% else %}
+                    <span class="danger bold">Nicht verfügbar</span>
+                  {% endif %}
+                </td>
+                <!-- <td>
+                  <div class="table_buttons">
+                    <div class="button info" onclick="showDetails('{{ buch.titel }}', `{{ buch.details|escapejs }}`)">Details</div>
+                    <form method="post" action="{% url 'buch_ausleihen' %}">
+                      {% csrf_token %}
+                      <input type="hidden" name="isbn" value="{{ buch.isbn }}">
+                      {% if buch.verfuegbar %}
+                        <button class="button success" name="aktion" value="ausleihen">Ausleihen</button>
+                      {% else %}
+                        <button class="button warning" name="aktion" value="vormerken">Vormerken</button>
+                      {% endif %}
+                    </form>
+                  </div>
+                </td> -->
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+  <div id="modal" class="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:9999;">
+  <div style="background:#fff; padding:20px; border-radius:8px; max-width:500px; box-shadow:0 2px 10px rgba(0,0,0,0.2); position:relative;">
+    <span style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px;" onclick="closeModal()">&times;</span>
+    <h2 id="modalTitle">Buchtitel</h2>
+    <p id="modalText">Beschreibungstext...</p>
+  </div>
+</div>
+</body>
+<script>
+    function showDetails(titel, details) {
+    document.getElementById('modalTitle').textContent = titel;
+    document.getElementById('modalText').textContent = details;
+    document.getElementById('modal').style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+    function resetSearchAusgeliehen() {
+      document.getElementById('ausgeliehenSearch').value = '';
+    }
+    function resetSearchKatalog() {
+      document.getElementById('bookSearch').value = '';
+      document.getElementById('genreFilter').value = 'all';
+    }
+</script>
+</html>
+

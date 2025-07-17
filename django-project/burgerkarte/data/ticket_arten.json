@@ -1,0 +1,22 @@
+[
+  {
+    "typ": "Einzelfahrt",
+    "beschreibung": "Einzelfahrt innerhalb eines Verkehrsverbunds",
+    "preis": 3.20
+  },
+  {
+    "typ": "Tageskarte",
+    "beschreibung": "Ganztägige Nutzung",
+    "preis": 6.00
+  },
+  {
+    "typ": "Wochenkarte",
+    "beschreibung": "7 Tage gültig",
+    "preis": 15.00
+  },
+  {
+    "typ": "Monatskarte",
+    "beschreibung": "30 Tage gültig",
+    "preis": 49.00
+  }
+]

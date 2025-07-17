@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../main_style.css">
+  <link rel="icon" type="image/png" href="../imgs/icons/hamburger.png">
+  <script src="../main_script.js" defer></script>
+  <title>ÖPNV - Ticketverwaltung</title>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar_hide_button">
+      <img src="../imgs/icons/close.png">
+    </div>
+    <h1>Burgerkarte</h1>
+    <h2>Service Interface<br>ÖPNV</h2>
+    <div class="navbar_container">
+      <div class="navbar_items">
+        <a class="navbar_item" href="dashboard.html">
+          <img><p>Dashboard</p>
+        </a>
+        <a class="navbar_item selected">
+          <img><p>Ticketverwaltung</p>
+        </a>
+        <a class="navbar_item" href="nutzerverwaltung.html">
+          <img><p>Nutzerverwaltung</p>
+        </a>
+        <a class="navbar_item" href="historie.html">
+          <img><p>Historie</p>
+        </a>
+      </div>
+    </div>
+    <div class="navbar_bottom_buttons">
+      <div>Hilfe</div>
+      <div>Kontakt</div>
+      <div>Impressum</div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="navbar_show_button">
+      <img src="../imgs/icons/hamburger.png">
+    </div>
+    <div class="topbar">
+      <h1>ÖPNV - Ticketverwaltung</h1>
+      <div class="usermenu_show_button">
+        <img src="../imgs/icons/user.png">
+        <p>ÖPNV Admin</p>
+      </div>
+      <div class="usermenu">
+        <div class="usermenu_button">Profil</div>
+        <div class="usermenu_button">Abmelden</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="header">
+        <img src="../imgs/icons/ticket.png" alt="Bücherverwaltung">
+        <h1>Willkommen bei der Ticketverwaltung</h1>
+      </div>
+      <p>Von dieser Seite aus können alle Tickets bearbeitet oder gelöscht werden, die zum Kauf für die Nutzenden der Burgerkarte zur Verfügung stehen sollen. Es können von hier aus auch neue Tickets im System hinzugefügt werden.</p>
+    </div>
+    <div class="dashboard">
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Anzahl verschiedener Tickets</h1>
+        </div>
+        <p><span class="bold">8</span> Tickets</p>
+      </div>
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Durchschnittlicher Ticketpreis</h1>
+        </div>
+        <p><span class="bold">9,30€</span></p>
+      </div>
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Beliebtestes Ticket</h1>
+        </div>
+        <p><span class="bold">Standard Erwachsene</span></p>
+      </div>
+    </div>
+    <div class="actions">
+      <div class="action_item">
+        <img src="../imgs/icons/add_ticket.png" alt="Ticket hinzufügen">
+        <p>Ticket hinzufügen</p>
+      </div>
+      <div class="action_item">
+        <img src="../imgs/icons/download.png" alt="Liste herunterladen">
+        <p>Liste herunterladen</p>
+      </div>
+      <div class="action_item">
+        <img src="../imgs/icons/upload.png" alt="Liste hochladen">
+        <p>Liste hochladen</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="header">
+        <h1>Liste aller Ticketarten</h1>
+      </div>
+      <div class="table_filter">
+        <div class="table_group">
+          <label for="search">Kennwortsuche</label>
+          <input type="text" placeholder="Suche..." id="search" name="search">
+        </div>
+        <div class="table_group">
+          <label for="reduced">Ermäßigt</label>
+          <select name="reduced" id="reduced">
+            <option value="all">Alle</option>
+            <option value="1">Ja</option>
+            <option value="2">Nein</option>
+          </select>
+        </div>
+        <div class="table_group">
+          <label for="type">Tickettyp</label>
+          <select name="type" id="type">
+            <option value="all">Alle</option>
+            <option value="1">Streckenkarten</option>
+            <option value="2">Tageskarten</option>
+          </select>
+        </div>
+        <div class="table_group">
+          <label for="amount">Personenanzahl</label>
+          <select name="amount" id="amount">
+            <option value="all">Alle</option>
+            <option value="1">Einzel</option>
+            <option value="2">Mehrere</option>
+          </select>
+        </div>
+        <button type="reset">Zurücksetzen</button>
+        <button type="submit">
+          <img src="../imgs/icons/search.png">
+        </button>
+      </div>
+      <div class="table_container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Ermäßigt</th>
+              <th>Anzahl Personen</th>
+              <th>Gültigkeit</th>
+              <th>Kosten</th>
+              <th>Aktionen</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0001</td>
+              <td>Standard Erwachsene</td>
+              <td>Nein</td>
+              <td>1</td>
+              <td>Streckenkarte (1 Strecke)</td>
+              <td>3,00€</td>
+              <td>
+                <div class="table_buttons">
+                  <div class="button">Bearbeiten</div>
+                  <div class="button danger">Löschen</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>0002</td>
+              <td>Standard Ermäßigt</td>
+              <td>Ja</td>
+              <td>1</td>
+              <td>Streckenkarte (1 Strecke)</td>
+              <td>2,50€</td>
+              <td>
+                <div class="table_buttons">
+                  <div class="button">Bearbeiten</div>
+                  <div class="button danger">Löschen</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>0003</td>
+              <td>Gruppenticket Einzelstrecke</td>
+              <td>Nein</td>
+              <td>4</td>
+              <td>Streckenkarte (1 Strecke)</td>
+              <td>9,00€</td>
+              <td>
+                <div class="table_buttons">
+                  <div class="button">Bearbeiten</div>
+                  <div class="button danger">Löschen</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>0004</td>
+              <td>3-Strecken-Ticket</td>
+              <td>Nein</td>
+              <td>1</td>
+              <td>Streckenkarte (3 Strecken)</td>
+              <td>7,00€</td>
+              <td>
+                <div class="table_buttons">
+                  <div class="button">Bearbeiten</div>
+                  <div class="button danger">Löschen</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>0005</td>
+              <td>Wochenticket</td>
+              <td>Nein</td>
+              <td>1</td>
+              <td>Tageskarte (7 Tage)</td>
+              <td>25,00€</td>
+              <td>
+                <div class="table_buttons">
+                  <div class="button">Bearbeiten</div>
+                  <div class="button danger">Löschen</div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

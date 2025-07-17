@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../main_style.css">
+  <link rel="icon" type="image/png" href="../imgs/icons/hamburger.png">
+  <script src="../main_script.js" defer></script>
+  <title>Bibliothek - Nutzerverwaltung</title>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar_hide_button">
+      <img src="../imgs/icons/close.png">
+    </div>
+    <h1>Burgerkarte</h1>
+    <h2>Service Interface<br>Bibliothek</h2>
+    <div class="navbar_container">
+      <div class="navbar_items">
+        <a class="navbar_item" href="dashboard.html">
+          <img><p>Dashboard</p>
+        </a>
+        <a class="navbar_item" href="buecherverwaltung.html">
+          <img><p>Bücherverwaltung</p>
+        </a>
+        <a class="navbar_item selected">
+          <img><p>Nutzerverwaltung</p>
+        </a>
+        <a class="navbar_item" href="historie.html">
+          <img><p>Historie</p>
+        </a>
+      </div>
+    </div>
+    <div class="navbar_bottom_buttons">
+      <div>Hilfe</div>
+      <div>Kontakt</div>
+      <div>Impressum</div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="navbar_show_button">
+      <img src="../imgs/icons/hamburger.png">
+    </div>
+    <div class="topbar">
+      <h1>Bibliothek - Nutzerverwaltung</h1>
+      <div class="usermenu_show_button">
+        <img src="../imgs/icons/user.png">
+        <p>Bibliothek Admin</p>
+      </div>
+      <div class="usermenu">
+        <div class="usermenu_button">Profil</div>
+        <div class="usermenu_button">Abmelden</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="header">
+        <img src="../imgs/icons/users.png" alt="Nutzerverwaltung">
+        <h1>Willkommen bei der Nutzerverwaltung</h1>
+      </div>
+      <p>Von dieser Seite aus können alle Mitglieder der Bibliothek angezeigt werden. Dabei können die jeweils ausgeliehenen Bücher, Abgabetermine und Kontostände eingesehen werden. Im Notfall können von hier aus auch Benutzer gesperrt werden.</p>
+    </div>
+    <div class="dashboard">
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Anzahl registrierter Mitglieder</h1>
+        </div>
+        <p><span class="bold">5</span> Mitglieder</p>
+      </div>
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Gesamter Kontostand</h1>
+        </div>
+        <p><span class="danger bold">- 15,40€</span></p>
+      </div>
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Anzahl ausgeliehender Bücher</h1>
+        </div>
+        <p><span class="bold">5</span> /5 Bücher</p>
+      </div>
+    </div>
+    <div class="actions">
+      <div class="action_item">
+        <img src="../imgs/icons/download.png" alt="Liste herunterladen">
+        <p>Liste herunterladen</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="header">
+        <h1>Liste aller Mitglieder und ausgeliehener Bücher</h1>
+      </div>
+      <div class="table_filter">
+        <div class="table_group">
+          <label for="search">Kennwortsuche</label>
+          <input type="text" placeholder="Suche..." id="search" name="search">
+        </div>
+        <div class="table_group">
+          <label for="status">Stand der Ausleihe</label>
+          <select name="status" id="status">
+            <option value="all">Alle</option>
+            <option value="1">Normal</option>
+            <option value="2">Bald beendet</option>
+            <option value="3">Überzogen</option>
+          </select>
+        </div>
+        <div class="table_group">
+          <label for="balance">Kontostand</label>
+          <select name="balance" id="balance">
+            <option value="all">Alle</option>
+            <option value="1">Ausgeglichen</option>
+            <option value="2">Überzogen</option>
+          </select>
+        </div>
+        <button type="reset">Zurücksetzen</button>
+        <button type="submit">
+          <img src="../imgs/icons/search.png">
+        </button>
+      </div>
+      <div class="table_container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Benutzer</th>
+              <th>Ausgeliehene Bücher</th>
+              <th>Kontostand</th>
+              <th>Aktionen</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0001</td>
+              <td>Anna Müller</td>
+              <td>-</td>
+              <td><span class="success bold">0,00€</span></td>
+              <td>
+                <div class="table_buttons">
+                  <div class="button danger">Sperren</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>0002</td>
+              <td>Maximilian Schmidt</td>
+              <td>
+                <ul>
+                  <li>1984 - <span class="warning bold">15.04.2024</span></li>
+                  <li>Die Verwandlung - <span class="success bold">21.04.2024</span></li>
+                </ul>
+              </td>
+              <td><span class="danger bold">- 0,50€</span></td>
+              <td>
+                <div class="table_buttons">
+                  <div class="button danger">Sperren</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>0003</td>
+              <td>Laura Schneider</td>
+              <td>-</td>
+              <td><span class="success bold">0,00€</span></td>
+              <td>
+                <div class="table_buttons">
+                  <div class="button danger">Sperren</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>0004</td>
+              <td>Jonas Fischer</td>
+              <td>-</td>
+              <td><span class="danger bold">- 3,20€</span></td>
+              <td>
+                <div class="table_buttons">
+                  <div class="button danger">Sperren</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>0005</td>
+              <td>Emma Weber</td>
+              <td>
+                <ul>
+                  <li>Harry Potter und der Stein der Weisen - <span class="danger bold">09.04.2024</span></li>
+                </ul>
+              </td>
+              <td><span class="danger bold">- 11,70€</span></td>
+              <td>
+                <div class="table_buttons">
+                  <div class="button danger">Sperren</div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

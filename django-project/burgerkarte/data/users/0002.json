@@ -1,0 +1,223 @@
+{
+    "id": "0002",
+    "vorname": "Kai",
+    "nachname": "der Hai",
+    "geburtsdatum": "",
+    "adresse": {
+        "strasse": "",
+        "hausnummer": "",
+        "plz": "",
+        "ort": ""
+    },
+    "email": "kai@mail.de",
+    "passwort": "---",
+    "rolle": "user",
+    "service": null,
+    "status": "aktiv",
+    "erstellungsdatum": "2025-07-03",
+    "name": "Kai der Hai",
+    "bibliothek": {
+        "ausgeliehen": []
+    },
+    "tickets": [],
+    "bezahlkarte": {
+        "kontostand": 18.799999999999997,
+        "transaktionen": [
+            {
+                "datum": "2025-07-03",
+                "betrag": 10.0,
+                "typ": "einzahlung",
+                "beschreibung": "Einzahlung am Burgerkarte Bankomaten"
+            },
+            {
+                "datum": "03.07.2025",
+                "betrag": 3.2,
+                "typ": "ausgabe",
+                "beschreibung": "Einzelfahrt gekauft"
+            },
+            {
+                "datum": "03.07.2025",
+                "betrag": 3.2,
+                "typ": "ausgabe",
+                "beschreibung": "Einzelfahrt gekauft"
+            },
+            {
+                "datum": "03.07.2025",
+                "betrag": 3.2,
+                "typ": "ausgabe",
+                "beschreibung": "Einzelfahrt gekauft"
+            },
+            {
+                "datum": "03.07.2025",
+                "betrag": 10.0,
+                "typ": "einzahlung",
+                "beschreibung": "Aufladung"
+            },
+            {
+                "datum": "03.07.2025",
+                "betrag": 3.2,
+                "typ": "ausgabe",
+                "beschreibung": "Einzelfahrt gekauft"
+            },
+            {
+                "datum": "03.07.2025",
+                "betrag": 3.2,
+                "typ": "ausgabe",
+                "beschreibung": "Einzelfahrt gekauft"
+            },
+            {
+                "datum": "03.07.2025",
+                "betrag": 3.2,
+                "typ": "ausgabe",
+                "beschreibung": "Einzelfahrt gekauft"
+            },
+            {
+                "datum": "03.07.2025",
+                "betrag": 10.0,
+                "typ": "einzahlung",
+                "beschreibung": "Aufladung"
+            },
+            {
+                "datum": "03.07.2025",
+                "betrag": 6.0,
+                "typ": "ausgabe",
+                "beschreibung": "Tageskarte gekauft"
+            },
+            {
+                "datum": "03.07.2025",
+                "betrag": 20.0,
+                "typ": "einzahlung",
+                "beschreibung": "Aufladung"
+            },
+            {
+                "datum": "03.07.2025",
+                "betrag": 6.0,
+                "typ": "ausgabe",
+                "beschreibung": "Tageskarte gekauft"
+            }
+        ]
+    },
+    "termine": [],
+    "historie": [
+        {
+            "typ": "ticket_kauf",
+            "zeitpunkt": "2025-07-03T21:02:07.621852+00:00",
+            "beschreibung": "Einzelfahrt gekauft für 3.20€"
+        },
+        {
+            "typ": "ticket_loeschen",
+            "zeitpunkt": "2025-07-03T21:07:45.359876+00:00",
+            "beschreibung": "Einzelfahrt Ticket gelöscht"
+        },
+        {
+            "typ": "ticket_kauf",
+            "zeitpunkt": "2025-07-03T21:07:56.060853+00:00",
+            "beschreibung": "Einzelfahrt gekauft für 3.20€"
+        },
+        {
+            "typ": "ticket_loeschen",
+            "zeitpunkt": "2025-07-03T21:09:41.684917+00:00",
+            "beschreibung": "Einzelfahrt Ticket gelöscht"
+        },
+        {
+            "typ": "ticket_kauf",
+            "zeitpunkt": "2025-07-03T21:09:49.817872+00:00",
+            "beschreibung": "Einzelfahrt gekauft für 3.20€"
+        },
+        {
+            "typ": "ticket_loeschen",
+            "zeitpunkt": "2025-07-03T21:10:56.987616+00:00",
+            "beschreibung": "Einzelfahrt Ticket gelöscht"
+        },
+        {
+            "typ": "ticket_kauf",
+            "zeitpunkt": "2025-07-03T21:12:45.437110+00:00",
+            "beschreibung": "Einzelfahrt gekauft für 3.20€"
+        },
+        {
+            "typ": "ticket_loeschen",
+            "zeitpunkt": "2025-07-03T21:14:31.871985+00:00",
+            "beschreibung": "Einzelfahrt Ticket gelöscht"
+        },
+        {
+            "typ": "ticket_kauf",
+            "zeitpunkt": "2025-07-03T21:14:40.882707+00:00",
+            "beschreibung": "Einzelfahrt gekauft für 3.20€"
+        },
+        {
+            "typ": "ticket_loeschen",
+            "zeitpunkt": "2025-07-03T21:16:34.830690+00:00",
+            "beschreibung": "Einzelfahrt Ticket gelöscht"
+        },
+        {
+            "typ": "ticket_kauf",
+            "zeitpunkt": "2025-07-03T21:16:42.008145+00:00",
+            "beschreibung": "Einzelfahrt gekauft für 3.20€"
+        },
+        {
+            "typ": "ticket_kauf",
+            "zeitpunkt": "2025-07-03T21:17:05.769948+00:00",
+            "beschreibung": "Tageskarte gekauft für 6.00€"
+        },
+        {
+            "typ": "ticket_kauf",
+            "zeitpunkt": "2025-07-03T21:17:36.077776+00:00",
+            "beschreibung": "Tageskarte gekauft für 6.00€"
+        },
+        {
+            "typ": "ticket_loeschen",
+            "zeitpunkt": "2025-07-03T21:18:04.718136+00:00",
+            "beschreibung": "Einzelfahrt Ticket gelöscht"
+        },
+        {
+            "typ": "ticket_loeschen",
+            "zeitpunkt": "2025-07-03T21:18:06.091672+00:00",
+            "beschreibung": "Tageskarte Ticket gelöscht"
+        },
+        {
+            "typ": "ticket_loeschen",
+            "zeitpunkt": "2025-07-03T21:18:07.829778+00:00",
+            "beschreibung": "Tageskarte Ticket gelöscht"
+        },
+        {
+            "typ": "termin_buchung",
+            "zeitpunkt": "2025-07-03T21:19:55.868643+00:00",
+            "beschreibung": "Termin am 2025-07-03 um 09:00 gebucht"
+        },
+        {
+            "typ": "termin_absage",
+            "zeitpunkt": "2025-07-03T21:20:33.770885+00:00",
+            "beschreibung": "Termin am 2025-07-03 um 09:00 abgesagt"
+        },
+        {
+            "typ": "termin_buchung",
+            "zeitpunkt": "2025-07-03T21:20:41.953949+00:00",
+            "beschreibung": "Termin am 2025-07-04 um 09:00 gebucht"
+        },
+        {
+            "typ": "termin_absage",
+            "zeitpunkt": "2025-07-03T21:20:51.800841+00:00",
+            "beschreibung": "Termin am 2025-07-04 um 09:00 abgesagt"
+        },
+        {
+            "typ": "termin_buchung",
+            "zeitpunkt": "2025-07-04T09:34:52.214849+00:00",
+            "beschreibung": "Termin am 2025-07-04 um 11:45 gebucht"
+        },
+        {
+            "typ": "termin_absage",
+            "zeitpunkt": "2025-07-04T09:38:06.882846+00:00",
+            "beschreibung": "Termin am 2025-07-04 um 11:45 abgesagt"
+        },
+        {
+            "typ": "termin_buchung",
+            "zeitpunkt": "2025-07-04T09:38:22.370070+00:00",
+            "beschreibung": "Termin am 2025-07-04 um 15:00 gebucht"
+        },
+        {
+            "typ": "termin_absage",
+            "zeitpunkt": "2025-07-04T09:38:40.168597+00:00",
+            "beschreibung": "Termin am 2025-07-04 um 15:00 abgesagt"
+        }
+    ]
+}

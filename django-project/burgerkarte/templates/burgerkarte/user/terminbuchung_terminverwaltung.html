@@ -1,0 +1,364 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/main_style.css' %}?v=2">
+  <link rel="icon" type="image/png" href="{% static 'imgs/menu_icons/hamburger_11.png' %}">
+  <script>
+    const staticHamburgerPrefix = "{% static 'imgs/menu_icons/' %}";
+  </script>
+  <script src="{% static 'js/main_script.js' %}?v=2" defer></script>
+  <title>Termine - Burgerkarte</title>
+  <style>
+    .terminverwaltung_header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .terminplan_wrapper {
+      overflow-x: auto;
+      width: 100%;
+    }
+
+    .terminplan-container {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(300px, 1fr));
+      gap: 10px; 
+    }
+
+    .weekday-column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .weekday-header {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .weekday {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid  var(--table-highlight);
+      /* box-shadow: 0 4px 8px var(--shadow); */
+      border-radius: 8px;
+      padding: 10px;
+      overflow-y: auto;
+      /* overflow-x: hidden;   */
+      max-height: 300px;
+      box-sizing: border-box; 
+    }
+
+    .time-slot {
+      background-color: var(--timeslot-bg);
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      box-shadow: 0 4px 8px var(--shadow);
+      margin-bottom: 5px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .time-slot:hover {
+      background-color: var(--timeslot-hover-bg);
+    }
+
+    .time-slot.selected {
+      background-color: var(--highlight-success);
+      color: var(--highlight-font);
+      font-weight: bold;
+    }
+
+    .time-slot.booked {
+      background-color: var(--timeslot-booked-bg);
+      color: var(--timeslot-booked-font);
+      cursor: not-allowed;
+    }
+
+    .terminverwaltung_footer {
+      /* display: flex;
+      flex-wrap: wrap;
+      gap: 10px; */
+      margin-top: 30px;
+      /* align-items: center; */
+    }
+
+    /* .terminverwaltung_footer input[type="text"],
+    .terminverwaltung_footer select {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    } */
+
+    /* .button.success {
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .button.success:hover {
+      background-color: #45a049;
+    } */
+
+    /* .termindetails {
+      margin-top: 40px;
+      background-color: var(--card-bg);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px var(--shadow);
+      display: block;
+      width: 100%;
+      clear: both;
+    }
+
+    .termindetails table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .termindetails th, .termindetails td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid var(--table-highlight);
+    } */
+  </style>
+</head>
+<body>
+<div class="navbar">
+    <div class="navbar_hide_button">
+      <img src="{% static 'imgs/close.png' %}">
+    </div>
+    <h1>Burgerkarte</h1>
+    <h2>User Interface</h2>
+    <div class="navbar_container">
+      <div class="navbar_items">
+        <a class="navbar_item" href="/user_dashboard">
+          <img><p>Dashboard</p>
+        </a>
+        <a class="navbar_item" href="/bibliothek">
+          <img><p>Bibliothek</p>
+        </a>
+        <a class="navbar_item" href="/tickets">
+          <img><p>Tickets</p>
+        </a>
+        <a class="navbar_item" href="/bezahlkarte">
+          <img><p>Bezahlkarte</p>
+        </a>
+        <a class="navbar_item selected" href="/termine">
+          <img><p>Termine</p>
+        </a>
+        <a class="navbar_item" href="/historie">
+          <img><p>Historie</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="navbar_show_button">
+      <img src="{% static 'imgs/menu_icons/hamburger_11.png' %}" />
+    </div>
+    <div class="topbar">
+      <h1>Termine</h1>
+      <div class="usermenu_show_button">
+        <img src="{% static 'imgs/user.png' %}" />
+        <p>{{ request.session.user_name }}</p>
+      </div>
+      <div class="usermenu">
+        <a href="{% url 'logout' %}" class="usermenu_button">Abmelden</a>
+      </div>
+    </div>
+
+    {% if messages %}
+      <div class="message_container">
+        {% for message in messages %}
+            {% if message.tags == 'error' %}
+              <div class="message danger hidden">
+                <img src="{% static 'imgs/error.png' %}" alt="Error">
+                <p>{{ message }}</p>
+              </div>
+            {% elif message.tags == 'success' %}
+              <div class="message success hidden">
+                <img src="{% static 'imgs/success.png' %}" alt="Success">
+                <p>{{ message }}</p>
+              </div>
+            {% elif message.tags == 'warning' %}
+              <div class="message warning hidden">
+                <img src="{% static 'imgs/warning.png' %}" alt="Warning">
+                <p>{{ message }}</p>
+              </div>
+            {% elif message.tags == 'info' %}
+              <div class="message info hidden">
+                <img src="{% static 'imgs/info.png' %}" alt="Info">
+                <p>{{ message }}</p>
+              </div>
+            {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  <!-- <div class="content" style="display: flex; flex-direction: column;">    -->
+    <div class="card">
+      <div class="header">
+        <img src="{% static 'imgs/calendar.png' %}"/>
+        <h1>Deine Terminbuchung im Rathaus</h1>
+      </div>
+      <p>Keine Lust auf Warteschlangen? Buche dir einfach online deinen Wunschtermin im Rathaus. Wähle Anliegen, Datum und Uhrzeit - und du bist startklar! Deine Termine hast du hier immer im Blick und kannst sie bei Bedarf absagen.</p>
+    </div>
+
+    <div class="actions">
+      <a class="action_item" href="#termindetails">
+        <img src="{% static 'imgs/time_sheet.png' %}" alt="Deine Termine">
+        <p>Deine Termine</p>
+      </a>
+      <a class="action_item" href="#terminverwaltung">
+        <img src="{% static 'imgs/time_date.png' %}" alt="Neuen Termin buchen">
+        <p>Neuen Termin buchen</p>
+      </a>
+    </div>
+
+    <div class="card" id="termindetails">
+      <div class="header">
+        <img src="{% static 'imgs/time_sheet.png' %}"/>
+        <h1>Deine Termine</h1>
+      </div>
+      {% if gebuchte_termine %}
+      <div class="table_container">
+        <table>
+          <thead>
+            <tr>
+              <th>Datum</th>
+              <th>Uhrzeit</th>
+              <th>Anliegen</th>
+              <th>Aktionen</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for eintrag in gebuchte_termine %}
+            <tr>
+              <td>{{ eintrag.datum }}</td>
+              <td>{{ eintrag.zeit }}</td>
+              <td>{{ eintrag.anliegen }}</td>
+              <td>
+                <div class="table_buttons">
+                  <form method="POST" action="{% url 'termin_absagen' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="datum" value="{{ eintrag.datum }}">
+                    <input type="hidden" name="zeit" value="{{ eintrag.zeit }}">
+                    <button class="button danger">Absagen</button>
+                  </form>
+                </div>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+        <p>Keine Termine vorhanden.</p>
+      {% endif %}
+    </div>
+
+    <div class="card" id="terminverwaltung">
+      <div class="header">
+        <img src="{% static 'imgs/time_date.png' %}"/>
+        <h1>Neuen Termin buchen - Woche vom {{ start_of_week|date:"d.m.Y" }} bis {{ end_of_week|date:"d.m.Y" }}</h1>
+      </div>
+
+      <div class="terminplan_wrapper">
+        <div class="terminplan-container">
+          {% for day in view_data %}
+            <div class="weekday-column">
+              <div class="weekday-header">{{ day.tag|slice:":2" }}</div>
+              <div class="weekday">
+                {% for slot in day.slots %}
+                  <button type="button"
+                          class="time-slot {% if slot.blockiert_durch %}booked{% endif %}"
+                          data-wochentag="{{ day.tag }}"
+                          data-datum="{{ day.datum }}"
+                          data-uhrzeit="{{ slot.zeit }}"
+                          {% if slot.blockiert_durch %}disabled{% endif %}>
+                    {{ slot.zeit }}
+                    
+                  </button>
+                {% endfor %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Footer mit Formular -->
+      <div class="terminverwaltung_footer">
+        <!-- <form method="POST" action="/buchung_abschicken/" id="buchungsForm">
+          {% csrf_token %}
+          <input type="hidden" name="wochentag" id="inputWochentag">
+          <input type="hidden" name="datum" id="inputDatum">
+          <input type="hidden" name="uhrzeit" id="inputUhrzeit">
+          <input type="text" name="anliegen" placeholder="Ihr Anliegen" required>
+          <button type="submit" class="button success">Termin buchen</button>
+        </form> -->
+
+        <form method="POST" class="table_filter" action="/buchung_abschicken/" id="buchungsForm">
+          {% csrf_token %}
+          <input type="hidden" name="wochentag" id="inputWochentag">
+          <input type="hidden" name="datum" id="inputDatum">
+          <input type="hidden" name="uhrzeit" id="inputUhrzeit">
+          <div class="table_group">
+            <label for="anliegenText">Anliegen</label>
+            <input type="text" name="anliegen" id="anliegenText" placeholder="Ihr Anliegen..." required>
+          </div>
+          <button type="submit" class="button success">
+            <p>Termin buchen</p>
+          </button>
+        </form>
+      </div>
+    </div> 
+    
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const slots = document.querySelectorAll('.time-slot');
+      const inputWochentag = document.getElementById('inputWochentag');
+      const inputDatum = document.getElementById('inputDatum');
+      const inputUhrzeit = document.getElementById('inputUhrzeit');
+
+      slots.forEach(slot => {
+        if (!slot.classList.contains('booked')) {
+          slot.addEventListener('click', () => {
+            slots.forEach(s => s.classList.remove('selected'));
+            slot.classList.add('selected');
+
+            inputWochentag.value = slot.dataset.wochentag;
+            inputDatum.value = slot.dataset.datum;
+            inputUhrzeit.value = slot.dataset.uhrzeit;
+          });
+        }
+      });
+
+      // const weekDateElement = document.getElementById("weekRange");
+      // if (weekDateElement) {
+      //   const today = new Date();
+      //   const day = today.getDay();
+      //   const diff = today.getDate() - day + (day === 0 ? -6 : 1);
+      //   const start = new Date(today.setDate(diff));
+      //   const end = new Date(start);
+      //   end.setDate(start.getDate() + 4);
+      //   const format = d => d.toISOString().split("T")[0];
+      //   weekDateElement.innerText = format(start) + " - " + format(end);
+      // }
+    });
+  </script>
+</body>
+</html>

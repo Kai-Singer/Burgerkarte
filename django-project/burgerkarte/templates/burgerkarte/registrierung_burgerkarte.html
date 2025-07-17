@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/main_style.css' %}?v=2" />
+    <link rel="stylesheet" href="{% static 'css/login_style.css' %}?v=2" />
+    <link rel="icon" type="image/png" href="{% static 'imgs/menu_icons/hamburger_11.png' %}">
+    <script src="{% static 'js/main_script.js' %}?v=2" defer></script>
+    <script src="{% static 'js/login_script.js' %}?v=2" defer></script>
+    <title>Registrierung - Burgerkarte</title>
+</head>
+<body>
+{% if messages %}
+    <div class="message_container">
+    {% for message in messages %}
+        {% if message.tags == 'error' %}
+            <div class="message danger hidden">
+            <img src="{% static 'imgs/error.png' %}" alt="Error">
+            <p>{{ message }}</p>
+            </div>
+        {% elif message.tags == 'success' %}
+            <div class="message success hidden">
+            <img src="{% static 'imgs/success.png' %}" alt="Success">
+            <p>{{ message }}</p>
+            </div>
+        {% elif message.tags == 'warning' %}
+            <div class="message warning hidden">
+            <img src="{% static 'imgs/warning.png' %}" alt="Warning">
+            <p>{{ message }}</p>
+            </div>
+        {% elif message.tags == 'info' %}
+            <div class="message info hidden">
+            <img src="{% static 'imgs/info.png' %}" alt="Info">
+            <p>{{ message }}</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+{% endif %}
+<div class="login_container">
+    <div class="login_header">
+      <h1>Burgerkarte</h1>
+      <h2>Jetzt registrieren</h2>
+    </div>
+    <div class="register_container">
+        <form class="login_form" method="post" action="{% url 'registrierung' %}" oninput="updateBurger()" id="register-form">
+            {% csrf_token %}
+            <div class="login_form_group">
+                <label for="vorname">Vorname <span class="danger bold">*</span></label>
+                <input type="text" id="vorname" name="vorname" placeholder="Vorname" required>
+            </div>
+            <div class="login_form_group">
+                <label for="nachname">Nachname <span class="danger bold">*</span></label>
+                <input type="text" id="nachname" name="nachname" placeholder="Nachname" required>
+            </div>
+            <div class="login_form_group">
+                <label for="email">E-Mail <span class="danger bold">*</span></label>
+                <input type="email" id="email" name="email" placeholder="E-Mail" required>
+            </div>
+            <div class="login_form_group">
+                <label for="password">Passwort <span class="danger bold">*</span></label>
+                <input type="password" id="password" name="passwort" placeholder="Passwort" required>
+            </div>
+            <div class="login_form_group">
+                <label for="geburtsdatum">Geburtsdatum</label>
+                <input type="date" id="geburtsdatum" name="geburtsdatum">
+            </div>
+            <div class="login_form_row">
+                <div class="login_form_group">
+                    <label for="strasse">Straße</label>
+                    <input type="text" id="strasse" name="strasse" placeholder="Straße">
+                </div>
+                <div class="login_form_group">
+                    <label for="hausnummer">Hausnummer</label>
+                    <input type="text" id="hausnummer" name="hausnummer" placeholder="Hausnummer">
+                </div>
+            </div>
+            <div class="login_form_row">
+                <div class="login_form_group">
+                    <label for="plz">PLZ</label>
+                    <input type="text" id="plz" name="plz" placeholder="PLZ">
+                </div>
+                <div class="login_form_group">
+                    <label for="ort">Wohnort</label>
+                    <input type="text" id="ort" name="ort" placeholder="Wohnort">
+                </div>
+            </div>
+            <div class="login_form_row">
+                <button type="button" class="reset_button" onclick="resetRegisterForm()">Felder leeren</button>
+                <p class="login_form_hint"><span class="danger bold">*</span> Pflichfelder</p>
+            </div>
+            <div class="button_container login_buttons">
+                <a class="button" href="{% url 'login' %}">
+                <img src="{% static 'imgs/menu_icons/hamburger_11.png' %}">
+                <p>Zum Anmeldung</p>
+                </a>
+                <button type="submit" class="button success">
+                <img src="{% static 'imgs/add_person.png' %}">
+                <p>Registrieren</p>
+                </button>
+            </div>
+        </form>
+        <div class="burger-wrapper">
+            <p class="burger-headline">Bitte Daten vervollständigen:</p>
+            <div class="burger-preview" id="burger-preview">
+                <img src="{% static 'imgs/menu_icons/hamburger_61.png' %}" class="burger-part" id="top-bun">
+                <img src="{% static 'imgs/menu_icons/hamburger_62.png' %}" class="burger-part" id="salat">
+                <img src="{% static 'imgs/menu_icons/hamburger_63.png' %}" class="burger-part" id="tomate">
+                <img src="{% static 'imgs/menu_icons/hamburger_64.png' %}" class="burger-part" id="kaese">
+                <img src="{% static 'imgs/menu_icons/hamburger_65.png' %}" class="burger-part" id="patty">
+                <img src="{% static 'imgs/menu_icons/hamburger_66.png' %}" class="burger-part" id="bottom-bun">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

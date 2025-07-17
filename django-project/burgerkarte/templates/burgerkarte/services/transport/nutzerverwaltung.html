@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../main_style.css">
+  <link rel="icon" type="image/png" href="../imgs/icons/hamburger.png">
+  <script src="../main_script.js" defer></script>
+  <title>ÖPNV - Nutzerverwaltung</title>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar_hide_button">
+      <img src="../imgs/icons/close.png">
+    </div>
+    <h1>Burgerkarte</h1>
+    <h2>Service Interface<br>ÖPNV</h2>
+    <div class="navbar_container">
+      <div class="navbar_items">
+        <a class="navbar_item" href="dashboard.html">
+          <img><p>Dashboard</p>
+        </a>
+        <a class="navbar_item" href="ticketverwaltung.html">
+          <img><p>Ticketverwaltung</p>
+        </a>
+        <a class="navbar_item selected">
+          <img><p>Nutzerverwaltung</p>
+        </a>
+        <a class="navbar_item" href="historie.html">
+          <img><p>Historie</p>
+        </a>
+      </div>
+    </div>
+    <div class="navbar_bottom_buttons">
+      <div>Hilfe</div>
+      <div>Kontakt</div>
+      <div>Impressum</div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="navbar_show_button">
+      <img src="../imgs/icons/hamburger.png">
+    </div>
+    <div class="topbar">
+      <h1>ÖPNV - Nutzerverwaltung</h1>
+      <div class="usermenu_show_button">
+        <img src="../imgs/icons/user.png">
+        <p>ÖPNV Admin</p>
+      </div>
+      <div class="usermenu">
+        <div class="usermenu_button">Profil</div>
+        <div class="usermenu_button">Abmelden</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="header">
+        <img src="../imgs/icons/users.png" alt="Nutzerverwaltung">
+        <h1>Willkommen bei der Nutzerverwaltung</h1>
+      </div>
+      <p>Von dieser Seite aus können alle Nutzer der Burgerkarte angezeigt werden. Dabei können die jeweils aktuell gekauften Tickets und deren Einlösung beziehungsweise Frist eingesehen werden. Im Notfall können von hier aus auch Benutzer für das Kaufen von Tickets gesperrt werden.</p>
+    </div>
+    <div class="dashboard">
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Anzahl verkaufter Tickets</h1>
+        </div>
+        <p><span class="bold">105</span> Tickets</p>
+      </div>
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Aktuell laufende Tickets</h1>
+        </div>
+        <p><span class="bold">8</span> Tickets</p>
+      </div>
+      <div class="dashboard_item">
+        <div class="header">
+          <h1>Gesamtumsatz</h1>
+        </div>
+        <p><span class="success bold">520,00€</span></p>
+      </div>
+    </div>
+    <div class="actions">
+      <div class="action_item">
+        <img src="../imgs/icons/download.png" alt="Liste herunterladen">
+        <p>Liste herunterladen</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="header">
+        <h1>Liste aller Benutzer und laufender Tickets</h1>
+      </div>
+      <div class="table_filter">
+        <div class="table_group">
+          <label for="search">Kennwortsuche</label>
+          <input type="text" placeholder="Suche..." id="search" name="search">
+        </div>
+        <div class="table_group">
+          <label for="min_amount">Mindestumsatz</label>
+          <input type="text" placeholder="(Bitte Zahl eingeben)" id="min_amount" name="min_amount">
+        </div>
+        <button type="reset">Zurücksetzen</button>
+        <button type="submit">
+          <img src="../imgs/icons/search.png">
+        </button>
+      </div>
+      <div class="table_container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Benutzer</th>
+              <th>Laufende Tickets</th>
+              <th>Gekaufte Tickets</th>
+              <th>Umsatz</th>
+              <th>Aktionen</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0001</td>
+              <td>Anna Müller</td>
+              <td>-</td>
+              <td>0</td>
+              <td>0,00€</td>
+              <td>
+                <div class="table_buttons">
+                  <div class="button danger">Sperren</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>0002</td>
+              <td>Maximilian Schmidt</td>
+              <td>
+                <ul>
+                  <li>Standard Erwachsene - <span class="success bold">1/1 Fahrt frei</span></li>
+                  <li>Gruppenticket Einzelstrecke - <span class="success bold">1/1 Fahrt frei</span></li>
+                </ul>
+              </td>
+              <td>11</td>
+              <td><span class="success bold">63,00€</span></td>
+              <td>
+                <div class="table_buttons">
+                  <div class="button danger">Sperren</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>0003</td>
+              <td>Laura Schneider</td>
+              <td>
+                <ul>
+                  <li>Standard Ermäßigt - <span class="success bold">1/1 Fahrt frei</span></li>
+                  <li>3-Strecken-Ticket - <span class="warning bold">1/3 Fahrt frei</span></li>
+                  <li>Wochenticket - <span class="success bold">21.04.2025</span></li>
+                </ul>
+              </td>
+              <td>89</td>
+              <td><span class="success bold">385,50€</span></td>
+              <td>
+                <div class="table_buttons">
+                  <div class="button danger">Sperren</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>0004</td>
+              <td>Jonas Fischer</td>
+              <td>-</td>
+              <td>0</td>
+              <td>0,00€</td>
+              <td>
+                <div class="table_buttons">
+                  <div class="button danger">Sperren</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>0005</td>
+              <td>Emma Weber</td>
+              <td>
+                <ul>
+                  <li>3-Strecken-Ticket - <span class="success bold">2/3 Fahrt frei</span></li>
+                  <li>Wochenticket - <span class="danger bold">14.04.2025</span></li>
+                  <li>Wochenticket - <span class="warning bold">15.04.2025</span></li>
+                </ul>
+              </td>
+              <td>5</td>
+              <td><span class="success bold">71,50€</span></td>
+              <td>
+                <div class="table_buttons">
+                  <div class="button danger">Sperren</div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

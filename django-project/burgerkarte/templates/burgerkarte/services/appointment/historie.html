@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../main_style.css">
+  <link rel="icon" type="image/png" href="../imgs/hamburger.png">
+  <script src="../main_script.js" defer></script>
+  <title>Terminbuchung - Historie</title>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar_hide_button">
+      <img src="../imgs/icons/close.png">
+    </div>
+    <h1>Burgerkarte</h1>
+    <h2>Service Interface<br>Terminbuchung</h2>
+    <div class="navbar_container">
+      <div class="navbar_items">
+        <a class="navbar_item" href="dashboard.html">
+          <img><p>Dashboard</p>
+        </a>
+        <a class="navbar_item" href="terminverwaltung.html">
+          <img><p>Terminverwaltung</p>
+        </a>
+        <a class="navbar_item selected">
+          <img><p>Historie</p>
+        </a>
+      </div>
+    </div>
+    <div class="navbar_bottom_buttons">
+      <div>Hilfe</div>
+      <div>Kontakt</div>
+      <div>Impressum</div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="navbar_show_button">
+      <img src="../imgs/icons/hamburger.png">
+    </div>
+    <div class="topbar">
+      <h1>Terminbuchung - Historie</h1>
+      <div class="usermenu_show_button">
+        <img src="../imgs/icons/user.png">
+        <p>Termin Admin</p>
+      </div>
+      <div class="usermenu">
+        <div class="usermenu_button">Profil</div>
+        <div class="usermenu_button">Abmelden</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="header">
+        <img src="../imgs/icons/history.png" alt="Historie">
+        <h1>Willkommen bei der Historie</h1>
+      </div>
+      <p>Auf dieser Seite können alle Aktionen nachverfolgt werden, die mit der Terminbuchungsfunktion im Zusammenhang stehen.</p>
+    </div>
+    <div class="actions">
+      <div class="action_item">
+        <img src="../imgs/icons/download.png" alt="Daten herunterladen">
+        <p>Daten herunterladen</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="header">
+        <h1>Historie</h1>
+      </div>
+      <div class="table_filter">
+        <div class="table_group">
+          <label for="search">Kennwortsuche</label>
+          <input type="text" placeholder="Suche..." id="search" name="search">
+        </div>
+        <div class="table_group">
+          <label for="action">Aktion</label>
+          <select name="action" id="action">
+            <option value="all">Alle</option>
+            <option value="1">Termin erstellt</option>
+            <option value="2">Termin gelöscht</option>
+          </select>
+        </div>
+        <div class="table_group">
+          <label for="date">Datum</label>
+          <input type="date" id="date" name="date">
+        </div>
+        <button type="reset">Zurücksetzen</button>
+        <button type="submit">
+          <img src="../imgs/icons/search.png">
+        </button>
+      </div>
+      <div class="table_container">
+        <table>
+          <thead>
+            <tr>
+              <th>Datum</th>
+              <th>Uhrzeit</th>
+              <th>Aktion</th>
+              <th>Benutzer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>29.04.2025</td>
+              <td>12:15:33</td>
+              <td>Termin erstellt: "Anmeldung eines Gewerbes" am <span class="bold">07.05.2025</span> um 10:15 Uhr</td>
+              <td>Maximilian Schmidt</td>
+            </tr>
+            <tr>
+              <td>29.04.2025</td>
+              <td>09:12:47</td>
+              <td>Termin erstellt: "Beglaubigung von Dokumenten" am <span class="bold">08.05.2025</span> um 14:00 Uhr</td>
+              <td>Emma Weber</td>
+            </tr>
+            <tr>
+              <td>28.04.2025</td>
+              <td>14:05:17</td>
+              <td>Termin gelöscht: "Beantragung eines neuen Personalausweises" am <span class="bold">09.05.2025</span> um 11:15 Uhr</td>
+              <td>Anna Müller</td>
+            </tr>
+            <tr>
+              <td>28.04.2025</td>
+              <td>07:38:22</td>
+              <td>Termin gelöscht: "Ich will Geld bitte" am <span class="bold">07.05.2025</span> um 10:15 Uhr von <span class="bold danger">Jonas Fischer</span></td>
+              <td>Termin Admin</td>
+            </tr>
+            <tr>
+              <td>27.04.2025</td>
+              <td>22:49:58</td>
+              <td>Termin erstellt: "Beantragung eines neuen Personalausweises" am <span class="bold">05.05.2025</span> um 09:00 Uhr</td>
+              <td>Anna Müller</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
